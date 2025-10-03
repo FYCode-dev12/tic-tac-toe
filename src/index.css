@@ -1,0 +1,87 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  height: 100vh;
+  background: hsl(300, 15%, 36%);
+  font-family: "Montserrat", "Arial", sans-serif;
+  letter-spacing: 1px;
+}
+.tic-tac-toe {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+.square {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 5px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.3em;
+  background: hsl(300, 15%, 33%);
+}
+.square.remove-bg{
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 5px;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+.square.remove-bg:hover{
+  background: transparent;
+  cursor: default;
+}
+.square:hover {
+  background: hsl(300, 15%, 28%);
+  transition: all 0.1s ease-in-out;
+}
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background-color: #5ad4ff; /* Warna X */
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 8px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.cross::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border: 8px solid #f6b5a3; /* Warna O */
+  border-radius: 50%; /* Membuat bentuk lingkaran */
+}
+.message {
+  text-align: center;
+  color: rgb(15, 11, 15);
+  font-size: 2rem;
+  font-weight: bold;
+}
